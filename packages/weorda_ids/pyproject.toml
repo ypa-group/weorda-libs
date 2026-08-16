@@ -1,0 +1,13 @@
+[project]
+name = "weorda-ids"
+version = "0.1.0"
+description = "Entity identity per RFC-0003: UUIDv7 minting, parsing, snapshots. Stdlib only."
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/weorda_ids"]

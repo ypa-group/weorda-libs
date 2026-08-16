@@ -1,0 +1,30 @@
+[project]
+name = "weorda-libs"
+version = "0.1.0"
+description = "weorda ecosystem packages — cross-service contracts and plumbing (never business rules)"
+requires-python = ">=3.12"
+dependencies = [
+    "weorda-ids",
+    "weorda-events",
+]
+
+[tool.uv]
+package = false
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+]
+
+[tool.uv.workspace]
+members = ["packages/*"]
+
+[tool.uv.sources]
+weorda-ids = { workspace = true }
+weorda-events = { workspace = true }
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "--strict-markers"
+testpaths = ["packages"]
